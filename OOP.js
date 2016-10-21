@@ -1,21 +1,22 @@
 function gradeBook (theName, theClass) {
-	    this.name = theName;
-	    this.class = theClass;
+
+	    this.names = theName;
+	    this.userClass = theClass;
 	    this.quizScores = [];
 	    this.currentScore = 0;
+
 	}
-	​
 	gradeBook.prototype = {
-	    constructor: User,
+	    constructor: gradeBook,
 	    saveScore:function (addQuizScore)  {
-	        this.quizScores.push(theScoreToAdd);
+	        this.quizScores.push(addQuizScore);
 	    },
 	    showNameAndScores:function ()  {
-	        var scores = this.quizScore.length > 0 ? this.quizScore.join(",") : "No Scores Yet";
-	        return this.name + " Quiz Scores: " + scores;
+	        var scores = this.quizScores.length > 0 ? this.quizScores.join(",") : "No Scores Yet";
+	        return this.names + " Quiz Scores: " + scores;
 	    },
-	    changeclass:function (newclass)  {
-	        this.class = newclass;
-	        return "New class Saved: " + this.class;
+	    changeclass:function (newClass)  {
+	        this.userClass = newClass;
+	        return "New class Saved: " + this.userClass;
 	    }
 	}//User prototype to create new instances of the user;
